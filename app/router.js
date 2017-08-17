@@ -7,6 +7,14 @@ const Router = Ember.Router.extend({
 });
 
 Router.map(function() {
+  this.route('sign-in');
+  this.authenticatedRoute('welcome');
+  
+  this.authenticatedRoute('photographers', function () {
+    this.authenticatedRoute('new');
+    this.authenticatedRoute('edit', { path: './:photographers_id/edit' });
+  })
+  
 });
 
 export default Router;
