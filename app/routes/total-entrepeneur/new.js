@@ -3,18 +3,18 @@ import Ember from 'ember';
 export default Ember.Route.extend({
 
   model: function () {
-    return this.store.createRecord('mediaHouses');
+    return this.store.createRecord('total-entrepeneur');
   },
 
   setupController: function (controller, model) {
     this._super(controller, model);
 
-    controller.set('title', 'Create a new Photographer');
+    controller.set('title', 'Create a new Total entrepeneur');
     controller.set('buttonLabel', 'Create');
   },
 
   renderTemplate() {
-    this.render('mediaHouses/forms');
+    this.render('totalEntrepeneur/forms');
   },
 
   actions: {
@@ -23,8 +23,8 @@ export default Ember.Route.extend({
       this.controller.get('model').rollbackAttributes();
     },
 
-    saveMediaHouses(newMediaHouses) {
-      newMediaHouses.save().then(() => this.transitionTo('mediaHouses'));
+    saveTotalEntrepeneur(newTotalEntrepeneur) {
+      newTotalEntrepeneur.save().then(() => this.transitionTo('totalEntrepeneur'));
     }
   }
 });

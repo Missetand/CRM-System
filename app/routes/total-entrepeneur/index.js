@@ -2,16 +2,16 @@ import Ember from 'ember';
 
 export default Ember.Route.extend({
     model() {
-        return this.store.findAll('mediaHouses');
+        return this.store.findAll('total-entrepeneur');
       },
     
       actions: {
     
-        deleteMediaHouses(mediaHouses) {
+        deleteTotalEntrepeneur(totalEntrepeneur) {
           let confirmation = confirm('Are you sure?');
     
           if (confirmation) {
-            mediaHouses.destroyRecord();
+            totalEntrepeneur.destroyRecord();
           }
         }
       }
