@@ -1,0 +1,10 @@
+<div class="row">
+{{#each model as |building-owners|}}
+    <div class="col-md-4">
+        {{#customer-item item=building-owners}}
+            {{#link-to 'buildingOwners.edit' buildingOwners.id class='btn btn-success btn-xs'}}Edit{{/link-to}}
+            <button class="btn btn-danger btn-xs" {{action 'deleteBuildingOwners' buildingOwners}}>Delete</button>
+        {{/customer-item}}
+    </div>
+{{/each}}
+</div>

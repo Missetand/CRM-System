@@ -3,7 +3,7 @@ import Ember from 'ember';
 export default Ember.Route.extend({
 
   model(params) {
-    return this.store.findRecord('buildingOwners', params.buildingOwners_id);
+    return this.store.findRecord('building-owners', params.building_owners_id);
   },
 
   setupController(controller, model) {
