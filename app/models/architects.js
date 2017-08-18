@@ -16,11 +16,11 @@ const Validations = buildValidations({
     })
   ],
   cvr: [
-    validator('presence', true),
-    validator('length', { is: 8 }),
+    validator('length', { min: 0, max: 8 }),
     validator('number', {
       allowString: true,
-      integer: true
+      integer: true,
+      allowBlank: true
     })
   ],
   address: validator('presence', true),
