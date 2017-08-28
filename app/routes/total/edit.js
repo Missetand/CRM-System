@@ -3,18 +3,18 @@ import Ember from 'ember';
 export default Ember.Route.extend({
 
   model(params) {
-    return this.store.findRecord('building-owners', params.building_owners_id);
+    return this.store.findRecord('total', params.total_id);
   },
 
   setupController(controller, model) {
     this._super(controller, model);
 
-    controller.set('title', 'Edit BuildingOwners');
+    controller.set('title', 'Edit TotalEntrepeneur');
     controller.set('buttonLabel', 'Save changes');
   },
 
   renderTemplate() {
-    this.render('buildingOwners/forms');
+    this.render('total/forms');
   },
 
   actions: {
@@ -33,8 +33,8 @@ export default Ember.Route.extend({
         }
       }
     },
-    saveBuildingOwners(buildingOwners) {
-      buildingOwners.save().then(() => this.transitionTo('buildingOwners'));
+    saveTotalEntrepeneur(totalEntrepeneur) {
+      totalEntrepeneur.save().then(() => this.transitionTo('total'));
     },
 
 

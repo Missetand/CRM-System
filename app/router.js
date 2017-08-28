@@ -12,9 +12,9 @@ Router.map(function () {
 
   // Instadrone routes
 
-  this.authenticatedRoute('mediaHouses', function () {
+  this.authenticatedRoute('media', function () {
     this.authenticatedRoute('new');
-    this.authenticatedRoute('edit', { path: './:mediaHouses_id/edit' });
+    this.authenticatedRoute('edit', { path: './:media_id/edit' });
   }),
 
     this.authenticatedRoute('photographers', function () {
@@ -39,14 +39,14 @@ Router.map(function () {
       this.authenticatedRoute('edit', { path: './:municipality_id/edit' });
     }),
 
-    this.authenticatedRoute('buildingOwners', function () {
+    this.authenticatedRoute('building', function () {
       this.authenticatedRoute('new');
-      this.authenticatedRoute('edit', { path: './:buildingOwners_id/edit' });
+      this.authenticatedRoute('edit', { path: './:building_id/edit' });
     }),
 
-    this.authenticatedRoute('totalEntrepeneur', function () {
+    this.authenticatedRoute('total', function () {
       this.authenticatedRoute('new');
-      this.authenticatedRoute('edit', { path: './:totalEntrepenur_id/edit' });
+      this.authenticatedRoute('edit', { path: './:total_id/edit' });
     })
     // End Sitemotion routes
 });

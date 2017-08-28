@@ -1,0 +1,10 @@
+<div class="row">
+{{#each model as |total|}}
+    <div class="col-md-4">
+        {{#customer-item item=total}}
+            {{#link-to 'total.edit' total.id class='btn btn-success btn-xs'}}Edit{{/link-to}}
+            <button class="btn btn-danger btn-xs" {{action 'deleteTotalEntrepeneur' total}}>Delete</button>
+        {{/customer-item}}
+    </div>
+{{/each}}
+</div>
