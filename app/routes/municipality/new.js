@@ -12,8 +12,8 @@ export default Ember.Route.extend({
       this.controller.get('model').rollbackAttributes();
     },
     
-    addNewDeveloper(newDeveloper) {
-      newDeveloper.save().then(() => {
+    addNewMunicipality(newMunicipality) {
+      newMunicipality.save().then(() => {
         this.transitionTo('municipality.index');
       });
     }

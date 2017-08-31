@@ -14,7 +14,7 @@
     </thead>
     <tbody>
       {{#each model key="id" as |item|}}
-        {{developer/developer-row item=item}}
+        {{municipality/municipality-row item=item}}
       {{else}}
         {{#if model.isUpdating}}
             <tr><td colspan="5" class="text-center">Data is downloading...</td></tr>

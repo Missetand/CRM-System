@@ -7,7 +7,7 @@ export default Ember.Route.extend({
   },
 
   actions: {
-    deleteDeveloper(item) {
+    deleteMunicipality(item) {
       item.destroyRecord();
     }
   }
