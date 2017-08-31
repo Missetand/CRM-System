@@ -6,19 +6,7 @@ export default Ember.Route.extend({
     return this.store.findRecord('developers', params.developers_id);
   },
 
-  setupController(controller, model) {
-    this._super(controller, model);
-
-    controller.set('title', 'Edit Developers');
-    controller.set('buttonLabel', 'Save changes');
-  },
-
-  renderTemplate() {
-    this.render('developers/forms');
-  },
-
   actions: {
-
 
     willTransition(transition) {
       let model = this.controller.get('model');
@@ -33,10 +21,12 @@ export default Ember.Route.extend({
         }
       }
     },
-    saveDevelopers(developers) {
-      developers.save().then(() => this.transitionTo('developers'));
-    },
-
-
+    
+    updateDeveloper(editedDeveloper) {
+      editedDeveloper.save().then(() => {
+        this.transitionTo('developers.index');
+      });
+    }
   }
+
 });
