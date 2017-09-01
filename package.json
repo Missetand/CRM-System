@@ -40,6 +40,7 @@
     "ember-font-awesome": "^3.0.5",
     "ember-load-initializers": "^1.0.0",
     "ember-modal-dialog": "^2.3.0",
+    "ember-radio-button": "^1.1.1",
     "ember-resolver": "^4.0.0",
     "ember-source": "~2.14.1",
     "emberfire": "^2.0.7",

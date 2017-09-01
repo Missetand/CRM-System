@@ -1,19 +1,19 @@
     <thead>
     <tr>
         <th>ID</th>
-        <th>Firm Name</th>
+        <th> {{radio-button value='item.firmName' groupValue=sortBy}} Firm Name</th>
         <th>CVR</th>
-        <th>Email</th>
+        <th>{{radio-button value='email' groupValue=sortBy}} Email</th>
         <th>Phone Number</th>
         <th>Address</th>
         <th>Zip Code</th>
         <th>Comment / Notes</th>
         <th>Priority</th>
-        <th></th>
+        <th>{{input type='checkbox' checked=reverseSort}} Reverse sort</th>
     </tr>
     </thead>
     <tbody>
-      {{#each model key="id" as |item|}}
+      {{#each sortedTables as |item|}}
         {{municipality/municipality-row item=item}}
       {{else}}
         {{#if model.isUpdating}}

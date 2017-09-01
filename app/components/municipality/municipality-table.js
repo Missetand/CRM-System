@@ -2,9 +2,9 @@ import Ember from 'ember';
 
 export default Ember.Component.extend({
 
-  tagName: 'table',
+  tagName: 'tr',
   classNames: ['table', 'table-bordered', 'table-hover'],
-  sortedTables: Ember.computed.sort('municipality', 'sortDefinition'),
+  sortedTables: Ember.computed.sort('model', 'sortDefinition'),
   sortBy: 'firmName',
   reverseSort: false,
   sortDefinition: Ember.computed.sort('reverseSort', function() {
