@@ -6,19 +6,7 @@ export default Ember.Route.extend({
     return this.store.findRecord('total', params.total_id);
   },
 
-  setupController(controller, model) {
-    this._super(controller, model);
-
-    controller.set('title', 'Edit TotalEntrepeneur');
-    controller.set('buttonLabel', 'Save changes');
-  },
-
-  renderTemplate() {
-    this.render('total/forms');
-  },
-
   actions: {
-
 
     willTransition(transition) {
       let model = this.controller.get('model');
@@ -33,10 +21,12 @@ export default Ember.Route.extend({
         }
       }
     },
-    saveTotalEntrepeneur(totalEntrepeneur) {
-      totalEntrepeneur.save().then(() => this.transitionTo('total'));
-    },
-
-
+    
+    updateTotal(editedTotal) {
+      editedTotal.save().then(() => {
+        this.transitionTo('total.index');
+      });
+    }
   }
+
 });
