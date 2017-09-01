@@ -2,19 +2,8 @@ import Ember from 'ember';
 
 export default Ember.Route.extend({
 
-  model: function () {
+  model() {
     return this.store.createRecord('building');
-  },
-
-  setupController: function (controller, model) {
-    this._super(controller, model);
-
-    controller.set('title', 'Create a new Building Owner');
-    controller.set('buttonLabel', 'Create');
-  },
-
-  renderTemplate() {
-    this.render('building/forms');
   },
 
   actions: {
@@ -22,9 +11,12 @@ export default Ember.Route.extend({
     willTransition() {
       this.controller.get('model').rollbackAttributes();
     },
-
-    saveBuildingOwners(newBuildingOwners) {
-      newBuildingOwners.save().then(() => this.transitionTo('building'));
+    
+    addNewBuilding(newBuilding) {
+      newBuilding.save().then(() => {
+        this.transitionTo('building.index');
+      });
     }
-  }
+}
+
 });

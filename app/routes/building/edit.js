@@ -6,19 +6,7 @@ export default Ember.Route.extend({
     return this.store.findRecord('building', params.building_id);
   },
 
-  setupController(controller, model) {
-    this._super(controller, model);
-
-    controller.set('title', 'Edit building');
-    controller.set('buttonLabel', 'Save changes');
-  },
-
-  renderTemplate() {
-    this.render('building/forms');
-  },
-
   actions: {
-
 
     willTransition(transition) {
       let model = this.controller.get('model');
@@ -33,10 +21,12 @@ export default Ember.Route.extend({
         }
       }
     },
-    saveBuildingOwners(buildingwners) {
-      buildingwners.save().then(() => this.transitionTo('building'));
-    },
-
-
+    
+    updateBuilding(editedBuilding) {
+      editedBuilding.save().then(() => {
+        this.transitionTo('building.index');
+      });
+    }
   }
+
 });
