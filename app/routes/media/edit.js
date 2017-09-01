@@ -6,19 +6,7 @@ export default Ember.Route.extend({
     return this.store.findRecord('media', params.media_id);
   },
 
-  setupController(controller, model) {
-    this._super(controller, model);
-
-    controller.set('title', 'Edit MediaHouses');
-    controller.set('buttonLabel', 'Save changes');
-  },
-
-  renderTemplate() {
-    this.render('media/forms');
-  },
-
   actions: {
-
 
     willTransition(transition) {
       let model = this.controller.get('model');
@@ -33,10 +21,12 @@ export default Ember.Route.extend({
         }
       }
     },
-    saveMediaHouses(mediaHouses) {
-      mediaHouses.save().then(() => this.transitionTo('media'));
-    },
-
-
+    
+    updateMedia(editedMedia) {
+      editedMedia.save().then(() => {
+        this.transitionTo('media.index');
+      });
+    }
   }
+
 });

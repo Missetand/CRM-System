@@ -1,0 +1,19 @@
+<td>
+    {{#link-to 'media.edit' item.id}} {{item.id}} {{/link-to}}
+</td>
+<td>{{item.firmName}}</td>
+<td>{{item.cvr}}</td>
+<td>{{item.email}}</td>
+<td>{{item.phoneNumber}}</td>
+<td>{{item.address}}</td>
+<td>{{item.zipCode}}</td>
+<td>{{item.comment}}</td>
+<td>{{item.priority}}</td>
+<td>
+    
+    <button class="btn btn-xs btn-danger" {{action "deleteItem"}}>Delete</button>
+
+    {{#modal-dialog action="deleteConfirmed" title="Confirmation" primerButtonLabel="Delete"}}
+        <p>Are you really sure?</p>
+    {{/modal-dialog}}
+</td>

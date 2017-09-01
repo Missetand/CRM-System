@@ -1,10 +1,9 @@
-<div class="row">
-{{#each model as |media|}}
-    <div class="col-md-4">
-        {{#customer-item item=media}}
-            {{#link-to 'media.edit' media.id class='btn btn-success btn-xs'}}Edit{{/link-to}}
-            <button class="btn btn-danger btn-xs" {{action 'deleteMediaHouses' media}}>Delete</button>
-        {{/customer-item}}
-    </div>
-{{/each}}
-</div>
+<p>Database size: {{model.length}}</p>
+
+<p class="pull-right">
+  {{link-to 'Add a new Media House' 'media.new' class='btn btn-success'}}
+</p>
+
+{{media/media-table model=model}}
+
+{{outlet}}
