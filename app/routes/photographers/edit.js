@@ -6,19 +6,7 @@ export default Ember.Route.extend({
     return this.store.findRecord('photographers', params.photographers_id);
   },
 
-  setupController(controller, model) {
-    this._super(controller, model);
-
-    controller.set('title', 'Edit Photographers');
-    controller.set('buttonLabel', 'Save changes');
-  },
-
-  renderTemplate() {
-    this.render('photographers/forms');
-  },
-
   actions: {
-
 
     willTransition(transition) {
       let model = this.controller.get('model');
@@ -33,10 +21,12 @@ export default Ember.Route.extend({
         }
       }
     },
-    savePhotographers(photographers) {
-      photographers.save().then(() => this.transitionTo('photographers'));
-    },
-
-
+    
+    updatePhotographer(editedPhotographer) {
+      editedPhotographer.save().then(() => {
+        this.transitionTo('photographers.index');
+      });
+    }
   }
+
 });
