@@ -10,6 +10,11 @@ Router.map(function () {
   this.route('sign-in');
   this.authenticatedRoute('welcome');
 
+  //Admin routes
+  this.authenticatedRoute('admin');
+  this.authenticatedRoute('sign-up');
+  //End Admin routes 
+
   // Instadrone routes
 
   this.authenticatedRoute('media', function () {
@@ -49,7 +54,7 @@ Router.map(function () {
       this.authenticatedRoute('edit', { path: './:total_id/edit' });
     })
   // End Sitemotion routes
-  this.authenticatedRoute('admin');
+
 });
 
 export default Router;

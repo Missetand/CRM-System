@@ -5,7 +5,7 @@ export default Ember.Route.extend({
     return this.get('session').fetch().catch((error) => {
       console.log(error);
     });
-  },
+    },
 
   actions: {
     accessDenied() {
