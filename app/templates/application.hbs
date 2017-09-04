@@ -4,6 +4,11 @@
         <ul class="nav navbar-nav">
             {{#link-to 'welcome' class="active" tagName="li"}}<a href>Home</a>{{/link-to}}
         </ul>
+        <ul class="nav navbar-nav">
+            {{#if session.isAuthenticated}} 
+            {{#link-to 'admin' class="active" tagName="li"}}<a href>Admin</a>{{/link-to}}
+            {{/if}}
+        </ul>
         <div class='navbar-right'>
             {{#if session.isAuthenticated}}
             <button class='btn btn-default navbar-btn' {{action 'signOut'}}>

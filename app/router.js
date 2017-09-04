@@ -48,7 +48,8 @@ Router.map(function () {
       this.authenticatedRoute('new');
       this.authenticatedRoute('edit', { path: './:total_id/edit' });
     })
-    // End Sitemotion routes
+  // End Sitemotion routes
+  this.authenticatedRoute('admin');
 });
 
 export default Router;

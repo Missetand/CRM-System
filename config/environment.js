@@ -9,11 +9,11 @@ module.exports = function(environment) {
     locationType: 'auto',
 
     firebase: {
-      apiKey: 'AIzaSyDsN7RxQU7Vh6fd3ImNuhvxhrhDq5-HwoU',
-      authDomain: 'buildcode-crm.firebaseapp.com',
-      databaseURL: 'https://buildcode-crm.firebaseio.com',
-      storageBucket: 'buildcode-crm.appspot.com',
-      messagingSenderId: '557748943604'
+      apiKey: process.env.FIREBASE_API_KEY,
+      authDomain: process.env.FIREBASE_AUTH_DOMAIN,
+      databaseURL: process.env.FIREBASE_DB_URL,
+      storageBucket: process.env.FIREBASE_STORAGE_BUCKET,
+      messagingSenderId: process.env.FIREBASE_MESSAGEID
     },
 
     // if using ember-cli-content-security-policy
@@ -24,7 +24,7 @@ module.exports = function(environment) {
     },
 
     torii: {
-      sessionServiceName: 'session'
+      sessionServiceName: process.env.TORII_SESSION
     },
 
     EmberENV: {
