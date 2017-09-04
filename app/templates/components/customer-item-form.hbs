@@ -1,62 +1,62 @@
 <div class="form-horizontal">
-    <div class="form-group">
+  <div class="form-group">
 
-        <div class="col-sm-offset-2 col-sm-8">
-            {{validated-input model=model valuePath='firmName' placeholder='Firm Name'}}
-        </div>
+    <div class="col-sm-offset-2 col-sm-8">
+      {{validated-input model=model valuePath='firmName' placeholder='Firm Name'}}
     </div>
+  </div>
 
-    <div class="form-group">
+  <div class="form-group">
 
-        <div class="col-sm-offset-2 col-sm-8">
-            {{validated-input model=model valuePath='cvr' placeholder='CVR'}}
-        </div>
+    <div class="col-sm-offset-2 col-sm-8">
+      {{validated-input model=model valuePath='cvr' placeholder='CVR'}}
     </div>
+  </div>
 
-    <div class="form-group">
+  <div class="form-group">
 
-        <div class="col-sm-offset-2 col-sm-8">
-            {{validated-input model=model valuePath='email' placeholder='Email'}}
-        </div>
+    <div class="col-sm-offset-2 col-sm-8">
+      {{validated-input model=model valuePath='email' placeholder='Email'}}
     </div>
-    <div class="form-group">
+  </div>
+  <div class="form-group">
 
-        <div class="col-sm-offset-2 col-sm-8">
-            {{validated-input model=model valuePath='phoneNumber' placeholder='Phone Number'}}
-        </div>
+    <div class="col-sm-offset-2 col-sm-8">
+      {{validated-input model=model valuePath='phoneNumber' placeholder='Phone Number'}}
     </div>
-    <div class="form-group">
+  </div>
+  <div class="form-group">
 
-        <div class="col-sm-offset-2 col-sm-8">
-            {{validated-input model=model valuePath='address' placeholder='Address'}}
-        </div>
+    <div class="col-sm-offset-2 col-sm-8">
+      {{validated-input model=model valuePath='address' placeholder='Address'}}
     </div>
+  </div>
 
-    <div class="form-group">
+  <div class="form-group">
 
-        <div class="col-sm-offset-2 col-sm-8">
-            {{validated-input model=model valuePath='zipCode' placeholder='Zip Code'}}
-        </div>
+    <div class="col-sm-offset-2 col-sm-8">
+      {{validated-input model=model valuePath='zipCode' placeholder='Zip Code'}}
     </div>
+  </div>
 
-    <div class="form-group">
+  <div class="form-group">
 
-        <div class="col-sm-offset-2 col-sm-8">
-            {{validated-input model=model valuePath='comment' placeholder='Comment / Notes'}}
-        </div>
+    <div class="col-sm-offset-2 col-sm-8">
+      {{validated-input model=model valuePath='comment' placeholder='Comment / Notes'}}
     </div>
+  </div>
 
-    <div class="form-group">
-        <div class="col-sm-offset-2 col-sm-8">
-            {{validated-input model=model valuePath='priority' placeholder='Priority'}}
-        </div>
+  <div class="form-group">
+    <div class="col-sm-offset-2 col-sm-8">
+      {{validated-input model=model valuePath='priority' placeholder='Priority'}}
     </div>
+  </div>
 
 
-    <div class="form-group">
-        <div class="col-sm-offset-6 col-sm-8">
-            <button type="submit" class="btn btn-default" disabled={{v-get model 'isInvalid'}} {{action 'buttonClicked' model}}>{{submitButtonLabel}}</button>
-        </div>
+  <div class="form-group">
+    <div class="col-sm-offset-6 col-sm-8">
+      <button type="submit" class="btn btn-default" disabled={{v-get model 'isInvalid'}} {{action 'buttonClicked' model}}>{{submitButtonLabel}}</button>
     </div>
+  </div>
 
 </div>
