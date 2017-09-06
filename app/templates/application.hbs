@@ -2,10 +2,10 @@
   <div class='container'>
     <div class='navbar-brand'>CRM-System</div>
     <ul class="nav navbar-nav">
-      {{#link-to 'welcome' class="active" tagName="li"}}<a href>Home</a>{{/link-to}}
+      {{#link-to 'welcome' class="nav-link" tagName="li"}}<a href><i class="fa fa-home fa-fw" aria-hidden="true"></i>&nbsp; Home</a>{{/link-to}}
     </ul>
     <ul class="nav navbar-nav">
-      {{#if session.isAuthenticated}} {{#link-to 'admin' class="active" tagName="li"}}<a href>Admin</a>{{/link-to}} {{/if}}
+      {{#if session.isAuthenticated}} {{#link-to 'admin' class="nav-link" tagName="li"}}<a href><i class="fa fa-cog fa-fw" aria-hidden="true"></i>&nbsp; Admin</a>{{/link-to}} {{/if}}
     </ul>
     <div class='navbar-right'>
       {{#if session.isAuthenticated}}
