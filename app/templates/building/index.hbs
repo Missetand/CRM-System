@@ -1,9 +1,8 @@
+<div class="well">
 <p>Database size: {{model.length}}</p>
-
-<p class="pull-right">
-  {{link-to 'Add a new Building Owner' 'building.new' class='btn btn-success'}}
-</p>
-<div class="table-responsive">
-{{building/building-table model=model}}
+{{link-to 'Add a new Municipality' 'municipality.new' class='btn btn-success'}}
 </div>
+<br>
+{{building/building-table model=model}}
+
 {{outlet}}

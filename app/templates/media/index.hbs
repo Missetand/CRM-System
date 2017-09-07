@@ -1,10 +1,9 @@
+<div class="well">
 <p>Database size: {{model.length}}</p>
-
-<p class="pull-right">
-  {{link-to 'Add a new Media House' 'media.new' class='btn btn-success'}}
-</p>
-
-<div class="table-responsive">
-{{media/media-table model=model}}
+{{link-to 'Add a new Municipality' 'municipality.new' class='btn btn-success'}}
 </div>
+<br>
+
+{{media/media-table model=model}}
+
 {{outlet}}

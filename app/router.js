@@ -9,6 +9,7 @@ const Router = Ember.Router.extend({
 Router.map(function () {
   this.route('sign-in');
   this.authenticatedRoute('welcome');
+  this.authenticatedRoute('soon');
 
   //Admin routes
   this.authenticatedRoute('admin');

@@ -1,9 +1,8 @@
+<div class="well">
 <p>Database size: {{model.length}}</p>
-
-<p class="pull-right">
-  {{link-to 'Add a new Photographer' 'photographers.new' class='btn btn-success'}}
-</p>
-<div class="table-responsive">
-{{photographers/photographers-table model=model}}
+{{link-to 'Add a new Municipality' 'municipality.new' class='btn btn-success'}}
 </div>
+<br>
+{{photographers/photographers-table model=model}}
+
 {{outlet}}
