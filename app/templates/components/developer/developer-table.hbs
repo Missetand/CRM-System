@@ -1,25 +1,57 @@
-    <thead>
-    <tr>
-        <th>ID</th>
-        <th>Firm Name</th>
-        <th>CVR</th>
-        <th>Email</th>
-        <th>Phone Number</th>
-        <th>Address</th>
-        <th>Zip Code</th>
-        <th>Comment / Notes</th>
-        <th>Priority</th>
-        <th></th>
-    </tr>
-    </thead>
-    <tbody>
-      {{#each model key="id" as |item|}}
+
+<div class="form-group">
+      {{input type="text" value=filter class="form-control" id="filter" placeholder="Search"}}
+</div>
+
+<thead>
+<tr>
+    <th>ID</th>
+    <th>Firm Name 
+        <div class="btn-group">
+            <button type="button" class="btn btn-default btn-xs" {{action 'sortBy' 'firmName:asc'}}>
+                <span class="glyphicon glyphicon-arrow-up" aria-hidden="true"></span>
+            </button>
+            <button type="button" class="btn btn-default btn-xs" {{action 'sortBy' 'firmName:desc'}}>
+                <span class="glyphicon glyphicon-arrow-down" aria-hidden="true"></span>
+            </button>
+        </div>
+    </th>
+    <th>CVR</th>
+    <th> Email</th>
+    <th>Phone Number</th>
+    <th>Address</th>
+    <th>Zip Code
+                <div class="btn-group">
+            <button type="button" class="btn btn-default btn-xs" {{action 'sortBy' 'zipCode:asc'}}>
+                <span class="glyphicon glyphicon-arrow-up" aria-hidden="true"></span>
+            </button>
+            <button type="button" class="btn btn-default btn-xs" {{action 'sortBy' 'zipCode:desc'}}>
+                <span class="glyphicon glyphicon-arrow-down" aria-hidden="true"></span>
+            </button>
+        </div>
+    </th>
+    <th>Comment / Notes</th>
+    <th>Priority
+        <div class="btn-group">
+            <button type="button" class="btn btn-default btn-xs" {{action 'sortBy' 'priority:asc'}}>
+                <span class="glyphicon glyphicon-arrow-up" aria-hidden="true"></span>
+            </button>
+            <button type="button" class="btn btn-default btn-xs" {{action 'sortBy' 'priority:desc'}}>
+                <span class="glyphicon glyphicon-arrow-down" aria-hidden="true"></span>
+            </button>
+        </div>
+    </th>
+    <th>Action</th>
+  </tr>
+</thead>
+<tbody>
+    {{#each filteredDeveloper as |item|}}
         {{developer/developer-row item=item}}
-      {{else}}
-        {{#if model.isUpdating}}
-            <tr><td colspan="5" class="text-center">Data is downloading...</td></tr>
-        {{else}}
-            <tr><td colspan="5" class="text-center">Please add your first item to the list</td></tr>
+    {{else}}
+    {{#if model.isUpdating}}
+        <tr><td colspan="5" class="text-center">Data is downloading...</td></tr>
+    {{else}}
+        <tr><td colspan="5" class="text-center">Please add your first item to the list</td></tr>
         {{/if}}
-      {{/each}}
-    </tbody>
+    {{/each}}
+</tbody>
