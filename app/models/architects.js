@@ -38,8 +38,11 @@ const Validations = buildValidations({
      validator('presence', true),
      validator('number', {
       allowString: true,
-      integer: true
-  })
+      integer: true,
+      gte: 0,
+      lte: 5,
+      message: 'Priority has to be a number between 0 and 5, where is 0 the least amout of interest and 5 is the highest.'
+    })
   ],
   comment: validator('format', {
     allowBlank: true

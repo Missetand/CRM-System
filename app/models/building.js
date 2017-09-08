@@ -38,7 +38,9 @@ const Validations = buildValidations({
      validator('presence', true),
      validator('number', {
       allowString: true,
-      integer: true
+      integer: true,
+      gte: 0,
+      lte: 5
   })
   ],
   comment: validator('format', {

@@ -1,8 +1,15 @@
 <div class='page-header'>
     <h1>Sign-in</h1>
 </div>
-{{input type='text' class='form-control' value=email placeholder='email'}}
-{{input type='password' class='form-control' value=password placeholder='password'}}
+<div class="input-group">
+    <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+    {{input type='text' class='form-control' value=email placeholder='email'}}
+</div>
+<div class="input-group">
+    <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+    {{input type='password' class='form-control' value=password placeholder='password'}}
+</div>
+
 {{#if session.isWorking}}
     <button class='btn btn-default' disabled='disabled'>
         {{fa-icon 'spinner' spin=true}} Signing in...

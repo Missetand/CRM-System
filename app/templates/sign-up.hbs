@@ -4,16 +4,22 @@
 
 <div class="form-group">
 
-{{input type='text' class='form-control' value=email placeholder='email' }}
-  {{#if (v-get model 'email' 'isInvalid')}}
-    <div class="error">
-      {{v-get model 'email' 'message'}}
-    </div>
-  {{/if}}
-
-{{input type='password' class='form-control' value=password placeholder='password' }}
+<div class="input-group">
+    <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+    {{input type='email' class='form-control' value=email placeholder='email'}}
+</div>
+<div class="input-group">
+    <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+    {{input type='password' class='form-control' value=password placeholder='password'}}
+</div>
 
 <button class='btn btn-default' disabled={{v-get model 'isInvalid'}} {{action 'signUp'}}>
     {{fa-icon 'user-plus'}} Sign Up
 </button>
+
+<div class="panel panel-danger">  
+{{#each model.errors.name as |error|}}
+  {{error.message}}
+{{/each}}
+</div> 
 </div>

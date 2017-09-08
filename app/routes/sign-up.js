@@ -20,7 +20,7 @@ export default Ember.Route.extend({
 
             user.save().then(() => {
               this.transitionTo('welcome');
-            }).catch(err => console.warn('was not able to save: ', err));
+            }).catch(err => ('was not able to save: ', err));
 
           }
         });
