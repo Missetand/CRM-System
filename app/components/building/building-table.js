@@ -5,7 +5,7 @@ export default Ember.Component.extend({
   tagName: 'tr',
   classNames: ['table', 'table-bordered', 'table-hover'],
   building: [],
-  sortKeys: ['firmName'],
+  sortKeys: ['priority:desc'],
   filter: '',
 
   sortedBuilding: Ember.computed.sort('model', 'sortKeys'),

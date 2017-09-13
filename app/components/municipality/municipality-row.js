@@ -4,6 +4,7 @@ export default Ember.Component.extend({
 
   tagName: 'tr',
 
+
   actions: {
     deleteItem() {
       this.$('.modal').modal();

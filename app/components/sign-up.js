@@ -1,6 +1,6 @@
 import Ember from 'ember';
 
-export default Ember.Route.extend({
+export default Ember.Component.extend({
     firebaseApp: Ember.inject.service(),
     
       actions: {
@@ -18,5 +18,5 @@ export default Ember.Route.extend({
             }).catch(err => console.warn('was not able to save: ', err));
           });
         }
-      }
+    }
 });
