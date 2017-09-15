@@ -1,40 +1,59 @@
 <div class='page-header'>
   <h1>Welcome {{session.currentUser.email}}</h1>
 </div>
-<div class='panel panel-default'>
-  <div class='panel-heading'>
-    <h4>You're now free to create, edit and delete customers in the CRM system.</h4>
-  </div>
-  <div class='panel-body'>
+<div class='panel-body'>
+  <ul class="col-md-8 col-md-offset-2">
+    <div class="panel panel-danger">
+      <div class="panel-heading">
+        <h3>Customer input rules / guidelines</h3>
+      </div>
+      <div class="panel-body">
+        <div class="list-group">
+          <h4 class="list-group-item-heading">
+            Priority guidelines
+          </h4>
+          <p class="list-group-item-text">-1 = Already said no to offers / Do not contact again. </p>
+          <p class="list-group-item-text">  0 = Customers allready contacted. </p>
+          <p class="list-group-item-text">  1 = Potiential customer. </p>
+          <p class="list-group-item-text">  2 = Wants to hear more. </p>
+          <p class="list-group-item-text">  3 = Contact established / deals are in progress.  </p>
+          <p class="list-group-item-text">  4 = A meeting been set / deal has been made. </p>
+          <p class="list-group-item-text">  5 = Job secured </p>
 
-      <!-- Regler for indtastning og specielt prioteter 
-        -1 = Fuck af 
-         0 = Ikke kontaktet
-         1 = Potieniel kunde
-         2 = Vil gerne høre mere / send materiale 
-         3 = Igangværende samtale
-         4 = Mødeaftale
-         5 = Job hjemme
-      -->
+        </div>
+      </div>
+    </div>
+  </ul>
+  <ul class="col-md-8 col-md-offset-2">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h4> Buildcode customers</h4>
+      </div>
 
-    <ul>
-      <h4> Buildcode customers</h4>
       {{#link-to 'soon' class='list-group-item'}} Soon™️ {{/link-to}}
-    </ul>
-    <br>
-    <ul>
-      <h4> Instadrone customers</h4>
-      {{#link-to 'photographers' class='list-group-item'}} Photographers {{/link-to}} 
-      {{#link-to 'media' class='list-group-item'}} Media houses {{/link-to}}
-    </ul>
-    <br>
-    <ul>
-      <h4> Sitemotion customers</h4>
-      {{#link-to 'architects' class='list-group-item'}} Architects {{/link-to}}
-      {{#link-to 'developers' class='list-group-item'}} Developers {{/link-to}}
-      {{#link-to 'municipality' class='list-group-item'}} Municipality {{/link-to}}
-      {{#link-to 'building' class='list-group-item'}} Building owners {{/link-to}} 
-      {{#link-to 'total' class='list-group-item'}} Total Entrepeneurs {{/link-to}}
-    </ul>
-  </div>
+    </div>
+  </ul>
+  <br>
+  <ul class="col-md-8 col-md-offset-2">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h4> Instadrone customers</h4>
+      </div>
+      {{#link-to 'photographers' class='list-group-item'}} Photographers {{/link-to}} {{#link-to 'media' class='list-group-item'}}
+      Media houses {{/link-to}}
+    </div>
+
+  </ul>
+  <br>
+  <ul class="col-md-8 col-md-offset-2">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h4> Sitemotion customers</h4>
+      </div>
+      {{#link-to 'architects' class='list-group-item'}} Architects {{/link-to}} {{#link-to 'developers' class='list-group-item'}}
+      Developers {{/link-to}} {{#link-to 'municipality' class='list-group-item'}} Municipality {{/link-to}} {{#link-to 'building'
+      class='list-group-item'}} Building owners {{/link-to}} {{#link-to 'total' class='list-group-item'}} Total Entrepeneurs
+      {{/link-to}}
+    </div>
+  </ul>
 </div>
