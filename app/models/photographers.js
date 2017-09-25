@@ -28,7 +28,7 @@ const Validations = buildValidations({
 
   zipCode: [
     validator('presence', true),
-    validator('length', { is: 4 }),
+    validator('length', { min: 4 }),
     validator('number', {
       allowString: true,
       integer: true
