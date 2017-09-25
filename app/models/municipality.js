@@ -4,8 +4,9 @@ import { validator, buildValidations } from 'ember-cp-validations';
 const Validations = buildValidations({
   firmName: validator('presence', true),
   email: [
-    validator('presence', false),
-    validator('format', {type: 'email'})
+    validator('format', {
+      allowBlank: true,
+      type: 'email'})
    ],
   phoneNumber: [
     validator('presence', true),
