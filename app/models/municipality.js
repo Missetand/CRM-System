@@ -3,8 +3,8 @@ import { validator, buildValidations } from 'ember-cp-validations';
 
 const Validations = buildValidations({
   firmName: validator('presence', true),
-  email: [ 
-    validator('presence', true),
+  email: [
+    validator('presence', false),
     validator('format', {type: 'email'})
    ],
   phoneNumber: [
@@ -24,7 +24,7 @@ const Validations = buildValidations({
     })
   ],
   address: validator('presence', true),
-  
+
   zipCode: [
     validator('presence', true),
     validator('length', { is: 4 }),
@@ -39,9 +39,10 @@ const Validations = buildValidations({
      validator('number', {
       allowString: true,
       integer: true,
-      gte: 0,
-      lte: 5
-  })
+      gte: -1,
+      lte: 5,
+      message: 'Priority has to be a number between -1 and 5, where is 0 the least amout of interest and 5 is the highest.'
+    })
   ],
   comment: validator('format', {
     allowBlank: true
@@ -49,7 +50,7 @@ const Validations = buildValidations({
 
 });
 
-export default DS.Model.extend( 
+export default DS.Model.extend(
   Validations, {
   firmName: DS.attr('string'),
   email: DS.attr('string'),
